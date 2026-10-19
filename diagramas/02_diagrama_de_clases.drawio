@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-18T00:00:00.000Z" agent="ChatGPT" version="25.0.3" type="device">
+  <diagram id="15a76acf80" name="Diagrama de clases">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="animal" value="Animal&lt;br&gt;&lt;hr&gt;idAnimal: int&lt;br&gt;nombre: String&lt;br&gt;especie: String&lt;br&gt;edadAproximada: String&lt;br&gt;&lt;hr&gt;consultarDatos()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="caso" value="CasoRescate&lt;br&gt;&lt;hr&gt;idCaso: int&lt;br&gt;fechaReporte: Date&lt;br&gt;ubicacion: String&lt;br&gt;descripcion: String&lt;br&gt;estado: EstadoCaso&lt;br&gt;&lt;hr&gt;registrar()&lt;br&gt;actualizarEstado()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="310" y="90" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="exp" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;Expediente&lt;br&gt;&lt;hr&gt;obtenerResumen()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="340" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="perro" value="ExpedientePerro&lt;br&gt;&lt;hr&gt;raza: String&lt;br&gt;obtenerResumen()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="20" y="500" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gato" value="ExpedienteGato&lt;br&gt;&lt;hr&gt;esterilizado: boolean&lt;br&gt;obtenerResumen()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="210" y="500" width="170" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="fauna" value="ExpedienteFaunaSilvestre&lt;br&gt;&lt;hr&gt;especieCientifica: String&lt;br&gt;destinoRehabilitacion: String&lt;br&gt;obtenerResumen()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="500" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="asig" value="Asignacion&lt;br&gt;&lt;hr&gt;idAsignacion: int&lt;br&gt;fecha: Date&lt;br&gt;estado: String&lt;br&gt;&lt;hr&gt;registrarAsignacion()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="620" y="100" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="resp" value="Responsable&lt;br&gt;&lt;hr&gt;idResponsable: int&lt;br&gt;nombre: String&lt;br&gt;rol: String&lt;br&gt;&lt;hr&gt;consultarAsignaciones()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="900" y="100" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="gest" value="GestorCasos&lt;br&gt;&lt;hr&gt;- instancia: GestorCasos&lt;br&gt;&lt;hr&gt;+ obtenerInstancia()&lt;br&gt;registrarCaso()&lt;br&gt;asignarResponsable()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="620" y="330" width="220" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="factory" value="CasoRescateFactory&lt;br&gt;&lt;hr&gt;crearExpediente(especie)" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="900" y="330" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="obs" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;ObservadorCaso&lt;br&gt;&lt;hr&gt;actualizar(nuevoCaso)" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="330" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="notif" value="ServicioNotificaciones&lt;br&gt;&lt;hr&gt;suscribir()&lt;br&gt;notificarNuevoCaso()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="490" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl" value="CasoRescateController&lt;br&gt;&lt;hr&gt;crearCaso()&lt;br&gt;actualizarEstado()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="620" y="590" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="view" value="CasoRescateView&lt;br&gt;&lt;hr&gt;mostrarFormulario()&lt;br&gt;mostrarConfirmacion()" style="swimlane;html=1;startSize=28;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="900" y="590" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="" style="endArrow=diamond;endFill=1;html=1;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="caso" target="animal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="caso" target="asig">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="asig" target="resp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" value="" style="endArrow=block;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="perro" target="exp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" value="" style="endArrow=block;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="gato" target="exp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" value="" style="endArrow=block;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="fauna" target="exp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="gest" target="caso">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="gest" target="factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r9" value="" style="endArrow=block;endFill=0;dashed=1;html=1;" edge="1" parent="1" source="notif" target="obs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r10" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="ctrl" target="gest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r11" value="" style="endArrow=block;html=1;" edge="1" parent="1" source="ctrl" target="view">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
