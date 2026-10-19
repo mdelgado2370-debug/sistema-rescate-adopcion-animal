@@ -1,0 +1,23 @@
+# Patrones de diseño aplicados al SGCRAA
+
+## 1. Singleton
+
+Se propone utilizar Singleton en la clase GestorCasos para proporcionar un punto de acceso compartido a las operaciones de gestión de casos. Esto permite centralizar la coordinación de las operaciones y evita que distintas partes de la aplicación creen gestores independientes.
+
+## 2. Observer
+
+Se utiliza Observer para comunicar la incorporación de nuevos casos de rescate a los componentes interesados. Cuando se registra un nuevo caso, el sistema genera un evento que puede activar el servicio de notificaciones y avisar a los voluntarios o veterinarios suscritos.
+
+## 3. Factory Method
+
+Se utiliza Factory Method para organizar la creación de expedientes según la especie del animal. De esta manera, el sistema puede crear expedientes específicos para perros, gatos y fauna silvestre, facilitando la incorporación de nuevos tipos en el futuro.
+
+## 4. MVC
+
+El patrón MVC permite separar la interfaz, la coordinación de las acciones y los datos del negocio. La vista presenta los formularios y resultados, el controlador procesa las solicitudes y el modelo representa los casos de rescate, animales, expedientes y asignaciones.
+
+## Principios SOLID
+
+El principio de responsabilidad única se aplica al separar las funciones del controlador, la fábrica y el servicio de notificaciones. El principio abierto/cerrado se refleja en la posibilidad de incorporar nuevos expedientes. La sustitución de Liskov requiere que las implementaciones de Expediente cumplan su contrato. La segregación de interfaces se refleja en interfaces pequeñas, como ObservadorCaso. La inversión de dependencias se aplica al utilizar abstracciones para comunicar los cambios de los casos.
+
+Estas decisiones buscan facilitar la mantenibilidad, la reutilización y la ampliación de la arquitectura propuesta.
