@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-18T00:00:00.000Z" agent="ChatGPT" version="25.0.3" type="device">
+  <diagram id="f19fa8eb77" name="Arquitectura general">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Arquitectura lógica propuesta" style="text;html=1;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="20" width="420" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="users" value="Actores&lt;br&gt;Ciudadano · Voluntario/Veterinario · Administrador" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="390" y="90" width="580" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="view" value="VISTA (MVC)&lt;br&gt;Formularios y pantallas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="130" y="230" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ctrl" value="CONTROLADOR (MVC)&lt;br&gt;CasoRescateController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="450" y="230" width="270" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="MODELO (MVC)&lt;br&gt;CasoRescate · Animal · Asignacion" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="800" y="230" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="singleton" value="Singleton&lt;br&gt;GestorCasos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="410" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="factory" value="Factory Method&lt;br&gt;CasoRescateFactory" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="430" y="410" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="observer" value="Observer&lt;br&gt;ServicioNotificaciones + ObservadorCaso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="740" y="410" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="Persistencia de datos&lt;br&gt;Casos · Animales · Responsables · Historial" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="430" y="590" width="360" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="git" value="Gitflow / GitHub&lt;br&gt;master · develop · feature/*&lt;br&gt;Historial de commits y revisiones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="950" y="590" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="users" target="view">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="users" target="ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="users" target="model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="view" target="ctrl">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="ctrl" target="model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="model" target="singleton">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="singleton" target="factory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="singleton" target="observer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="singleton" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" value="" style="endArrow=block;html=1;rounded=0;" edge="1" parent="1" source="git" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
