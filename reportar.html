@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario para reportar un animal rescatado.">
+    <title>Reportar rescate | Sistema de Rescate y Adopción Animal</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Control de Rescate y Adopción Animal</h1>
+        <p>Registro de nuevos casos de rescate.</p>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reportar.html" aria-current="page">Reportar un rescate</a></li>
+                <li><a href="rescates.html">Ver rescates</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Formulario de ingreso de un animal rescatado</h2>
+            <p>Complete los campos solicitados para documentar el caso. Los campos marcados como obligatorios deben llenarse antes de enviar el formulario.</p>
+
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Información del caso</legend>
+
+                    <p>
+                        <label for="titulo-caso">Título del caso o nombre provisional:</label><br>
+                        <input type="text" id="titulo-caso" name="titulo-caso" required minlength="3" maxlength="80" placeholder="Ejemplo: Perrito encontrado en el parque">
+                    </p>
+
+                    <p>
+                        <label for="categoria">Categoría del animal:</label><br>
+                        <select id="categoria" name="categoria" required>
+                            <option value="">Seleccione una categoría</option>
+                            <option value="perros">Perros</option>
+                            <option value="gatos">Gatos</option>
+                            <option value="fauna-silvestre">Fauna Silvestre</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="fecha-rescate">Fecha del rescate:</label><br>
+                        <input type="date" id="fecha-rescate" name="fecha-rescate" required>
+                    </p>
+
+                    <p>
+                        <label for="ubicacion">Lugar donde fue encontrado:</label><br>
+                        <input type="text" id="ubicacion" name="ubicacion" required minlength="3" maxlength="120" placeholder="Sector, calle o referencia">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Urgencia médica</legend>
+                    <p>Seleccione el nivel de urgencia según la condición observada:</p>
+                    <p>
+                        <input type="radio" id="urgencia-alta" name="urgencia" value="alta" required>
+                        <label for="urgencia-alta">Alta</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="urgencia-media" name="urgencia" value="media">
+                        <label for="urgencia-media">Media</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="urgencia-baja" name="urgencia" value="baja">
+                        <label for="urgencia-baja">Baja</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Descripción del rescate</legend>
+                    <p>
+                        <label for="descripcion">Describa detalladamente el estado en que se encontró al animal:</label><br>
+                        <textarea id="descripcion" name="descripcion" rows="6" cols="50" required minlength="10" maxlength="1000" placeholder="Indique las condiciones físicas, comportamiento y cualquier observación importante."></textarea>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos de la persona que reporta</legend>
+                    <p>
+                        <label for="responsable">Nombre del responsable:</label><br>
+                        <input type="text" id="responsable" name="responsable" required minlength="3" maxlength="80">
+                    </p>
+                    <p>
+                        <label for="correo">Correo electrónico:</label><br>
+                        <input type="email" id="correo" name="correo" required placeholder="ejemplo@correo.com">
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Enviar reporte</button>
+                    <button type="reset">Limpiar formulario</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Sistema de Control de Rescate y Adopción Animal</p>
+        <p>Proyecto académico - Desarrollo de Sistemas Informáticos.</p>
+        <p><a href="index.html">Volver al inicio</a></p>
+        <p>&copy; 2026. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
